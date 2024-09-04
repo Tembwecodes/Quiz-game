@@ -5,11 +5,11 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  background: #254252;
 }
 #title {
   font-size: 20px;
-  background-color: orange;
+  background-color: #C5630C;
   border-radius: 50px;
   padding: 15px, 15px, 15px, 15px;
 }
@@ -19,6 +19,12 @@ body {
   width: 100px;
   height: auto;
 }
+
+#title {
+  color: #F0EFED;
+}
+
+
 #result {
   display: none;
 }

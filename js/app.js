@@ -101,6 +101,7 @@ let next = document.querySelectorAll('.next');
 let points = document.getElementById('score');
 let span = document.querySelectorAll('span');
 
+    
 /*-------------- Functions -------------*/
 function showQuestion() {
     for(let a = 0;a<span.length;a++) {
@@ -130,6 +131,17 @@ function determinedScore(e) {
 }
 console.log(determinedScore);
 
-
+function checkAnswer() {
+    let answerObject = document.getElementById('answerObject');
+    let answers = document.getElementById('answers')
+    answerObject.style.show = 'block';
+    scoreboard.style.show = 'block';
+    for(let a = 0; a<questionObject.length; a++)
+    {let list = document.createElement('li');
+        list.innerHTML = questionObject[a].answer;
+        answers.appendChild(list);
+    }
+}
+console.log(checkAnswer);
 
 showQuestion();

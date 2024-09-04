@@ -19,16 +19,17 @@
         <div class="questions">
         <h2 id="question"></h2>
         <ol type="A">
-            <li class="option"><span id="option0"></span></li>
-            <li class="option"><span id="option1"></span></li>
-            <li class="option"><span id="option2"></span></li>
-            <li class="option"><span id="option3"></span></li>
+            <li class="option"><span id="option0" onclick = "determinedScore(this)"></span></li>
+            
+            <li class="option"><span id="option1" onclick = "determinedScore(this)"></span></li>
+            <li class="option"><span id="option2" onclick = "determinedScore(this)"></span></li>
+            <li class="option"><span id="option3" onclick = "determinedScore(this)"></span></li>
         </ol>
         <h4 id="begin"></h4>
     </div>
 
     <div class="button">
-        <button type="button" class="next"></button>
+        <button type="button" class="next">next</button>
     </div>
 
     <div id="scoreboard">
@@ -36,12 +37,12 @@
         <h2 id="score-title">your score</h2>
         <h2 id="score"></h2>
         <button type="button" id="score-btn">Back to quiz</button>
-        <button type="button" id="check-answer">check Answer</button>
+        <button type="button" id="check-answer" onclick="checkAnswer()">check Answers</button>
     </div>
 
     <div id="answerObject">
         <h2>Answers :</h2>
-        <ol type="1">
+        <ol type="1" id ="answers">
 
         </ol>
         <button type="button" id="score-btn">Back to Quiz</button>
