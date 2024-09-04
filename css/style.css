@@ -28,3 +28,25 @@ body {
 #result {
   display: none;
 }
+
+.questions {
+  color: #FFFCF2;
+  background: #2E1509;
+  padding: 2rem;
+  margin: 3rem auto;
+  width: 90vw;
+  border-radius: 15px;
+}
+#question {
+  margin: 0.5rem;
+}
+
+.option {
+  margin-bottom: 0.5rem;
+  background: #87979A;
+  border-radius: 16px;width: 15rem;
+}
+
+.option hover {
+  color: blue;
+}
