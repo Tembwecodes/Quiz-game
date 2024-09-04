@@ -2,117 +2,117 @@ console.log('Quiz game!');
 
 /*-------------- Constants -------------*/
 
-const question = [
+const questionObject = [
     {
-        questio: "What English Premier League club plays at a stadium known as the Theatre of Dreams?",
+        question: "What English Premier League club plays at a stadium known as the Theatre of Dreams?",
         option: ["Brentford fc", "Manchester United", "Manchester City", "Arsenal"],
         answer: "Manchester United"
     },
 
     {
-        questio: "What position did NFL great Rob Gronkowski play?",
-        option: ["offensive lineman", "running back", "", "linebacker"],
-        answer: ""
+        question: "What position did NFL great Rob Gronkowski play?",
+        option: ["offensive lineman", "running back", "tight end", "linebacker"],
+        answer: "tight end"
     },
 
     {
-        questio: "How many times have Brazil won the World Cup?",
+        question: "How many times have Brazil won the World Cup?",
         option: ["5", "1", "6", "8"],
         answer: "5"
     },
 
     {
-        questio: "Which Golfer is credited with inventing the ‘Stinger’ shot?",
+        question: "Which Golfer is credited with inventing the ‘Stinger’ shot?",
         option: ["Scottie Scheffler", "Jake Knapp", "Rory McIlroy", "Tiger Woods"],
         answer: "Tiger Woods"
     },
 
     {
-        questio: "Who was formerly known as Cassius Clay?",
+        question: "Who was formerly known as Cassius Clay?",
         option: ["Muhammad Ali", "Mike Tyson", "Jack Johnson", "Manny Pacquiao"],
         answer: "Muhammad Ali"
     },
 
     {
-        questio: "In what year was the first World Cup?",
+        question: "In what year was the first World Cup?",
         option: ["1845", "2010", "1989", "1930"],
         answer: "1930"
     },
 
     {
-        questio: "What is Elton John’s real name?",
+        question: "What is Elton John’s real name?",
         option: ["John Cash", "Reginald Kenneth Dwight", "Elvis Presley", "Peter Whight"],
         answer: "Reginald Kenneth Dwight"
     },
 
     {
-        questio: "How many teams are there in Formula 1?",
+        question: "How many teams are there in Formula 1?",
         option: ["30", "40", "10", "20"],
         answer: "10"
     },
 
     {
-        questio: "Before becoming famous, where did Harry Styles work?",
+        question: "Before becoming famous, where did Harry Styles work?",
         option: ["At a Food Restaurant", "At JP Morgan", "At a Car Factory",  "At a bakery"],
         answer: "At a bakery"
     },
 
     {
-        questio: "What rock guitarist played on the Michael Jackson song “Beat It?",
+        question: "What rock guitarist played on the Michael Jackson song “Beat It?",
         option: ["Eddie Van Halen", "Brian May", "Jeff Beck", "Jimi Hendrix"],
         answer: "Eddie Van Halenn"
     },
 
     {
-        questio: "Angus Young is co-founder and lead guitarist for what Australian band?",
+        question: "Angus Young is co-founder and lead guitarist for what Australian band?",
         option: ["Alchetron", "AC/DC", "The Wanted", "Ultimate Boy bands"],
         answer: "AC/DC"
     },
 
     {
-        questio: "What is Taylor Swift’s middle name?",
+        question: "What is Taylor Swift’s middle name?",
         option: ["Underwood", "Hannah", "Natalie", "Alison"],
         answer: "Alison"
     },
 
     {
-        questio: "Eminem stars and performs in what semi-autobiographical movie from 2002?",
+        question: "Eminem stars and performs in what semi-autobiographical movie from 2002?",
         option: ["The Sea Inside", "8 Mile", "Remember The Titans", "The Pianist"],
         answer: "8 Mile"
     },
 
 ]
+console.log(questionObject);
 
 /*---------- Variables (state) ---------*/
+let i = 0;
 let score = 0;
-let userAnswers = [];
-let questions = [];
-let currentquestionIndex = 0;
+
 
 /*----- Cached Element References  -----*/
-
+let question = document.getElementById("question");
+let quizContainer = document.getElementById('quiz-container');
+let resultMessage = document.getElementById('result-message');
+let option0 = document.getElementById('option0');
+let option1 = document.getElementById('option1');
+let option2 = document.getElementById('option2');
+let option3 = document.getElementById('option3');
+let next = document.querySelectorAll('.next');
+let points = document.getElementById('score');
+let span = document.querySelectorAll('span');
 
 /*-------------- Functions -------------*/
-function startGame() {
-    
-}
-console.log(startGame);
-
-
 function showQuestion() {
-
+    for(let a = 0;a<span.length;a++) {
+        span[a].style.background = 'none';
+    }
+    question.innerHTML = 'Q.' +(i+1) + '' + questionObject[i].question;
+    option0.innerHTML = questionObject[i].option[0];
+    option1.innerHTML = questionObject[i].option[1];
+    option2.innerHTML = questionObject[i].option[2];
+    option3.innerHTML = questionObject[i].option[3];
+    begin.innerHTML = "Question" + (i+1) + 'of' + questionObject.length;
 }
+
+showQuestion();
 console.log(showQuestion);
-
-function endGame() {
-
-}
-
-
-
-
-
-
-startGame();
-/*----------- Event Listeners ----------*/
-

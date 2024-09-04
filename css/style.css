@@ -7,7 +7,6 @@ body {
   height: 100vh;
   background-color: #f0f0f0;
 }
-
 #title {
   font-size: 20px;
   background-color: orange;
@@ -20,4 +19,6 @@ body {
   width: 100px;
   height: auto;
 }
-  
+#result {
+  display: none;
+}
