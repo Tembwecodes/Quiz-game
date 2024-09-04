@@ -85,14 +85,13 @@ const questionObject = [
 console.log(questionObject);
 
 /*---------- Variables (state) ---------*/
-let i = 0;
-let score = 0;
+
 
 
 /*----- Cached Element References  -----*/
-let question = document.getElementById("question");
+let question = document.getElementById('question');
 let quizContainer = document.getElementById('quiz-container');
-let resultMessage = document.getElementById('result-message');
+let scoreCard = document.getElementById('scoreCard');
 let option0 = document.getElementById('option0');
 let option1 = document.getElementById('option1');
 let option2 = document.getElementById('option2');
@@ -100,26 +99,26 @@ let option3 = document.getElementById('option3');
 let next = document.querySelectorAll('.next');
 let points = document.getElementById('score');
 let span = document.querySelectorAll('span');
-
+let i = 0;
+let score = 0;
     
 /*-------------- Functions -------------*/
 function showQuestion() {
-    for(let a = 0;a<span.length;a++) {
+    for(let a = 0; a<span.length; a++) {
         span[a].style.background = 'none';
     }
-    question.innerHTML = 'Q.' +(i+1) + '' + questionObject[i].question;
+    question.innerHTML = 'Q.' + (i+1) + '' + questionObject[i].question;
     option0.innerHTML = questionObject[i].option[0];
     option1.innerHTML = questionObject[i].option[1];
     option2.innerHTML = questionObject[i].option[2];
     option3.innerHTML = questionObject[i].option[3];
-    begin.innerHTML = "Question" + (i+1) + 'of' + questionObject.length;
+    begin.innerHTML = "Question" + (i+1)  + 'of' + questionObject.length;
 }
-
-
 console.log(showQuestion);
 
+
 function determinedScore(e) {
-    if(e.innerHTML === questionObject[i].answer & score<questionObject.length)
+    if(e.innerHTML === questionObject[i].answer && score<questionObject.length)
     {
         score = score + 1;
         document.getElementById(e.id).style.background = '#132E35';
@@ -127,9 +126,23 @@ function determinedScore(e) {
     else {
         document.getElementById(e.id).style.background = 'tomato';
     }
-    setTimeout(nextQuestion,300);
+
+setTimeout(nextQuestion, 300);
 }
 console.log(determinedScore);
+
+
+function nextQuestion() {
+    if(i<questionObject.length-1)
+{
+    i = i + 1;
+    displayQuestion();
+}
+else {
+    points.innerHTML = score + '/' + questionObject.length;
+    quizContainer.style.display = 'block'
+}
+}
 
 function checkAnswer() {
     let answerObject = document.getElementById('answerObject');
@@ -145,3 +158,5 @@ function checkAnswer() {
 console.log(checkAnswer);
 
 showQuestion();
+
+/*-------------Event Listener-------------*/
