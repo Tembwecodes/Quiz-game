@@ -114,5 +114,22 @@ function showQuestion() {
     begin.innerHTML = "Question" + (i+1) + 'of' + questionObject.length;
 }
 
-showQuestion();
+
 console.log(showQuestion);
+
+function determinedScore(e) {
+    if(e.innerHTML === questionObject[i].answer & score<questionObject.length)
+    {
+        score = score + 1;
+        document.getElementById(e.id).style.background = '#132E35';
+    }
+    else {
+        document.getElementById(e.id).style.background = 'tomato';
+    }
+    setTimeout(nextQuestion,300);
+}
+console.log(determinedScore);
+
+
+
+showQuestion();
