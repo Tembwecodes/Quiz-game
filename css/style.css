@@ -1,4 +1,6 @@
 body {
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -12,11 +14,48 @@ body {
   background-color: #F4841A;
   border-radius: 50px;
   padding: 15px, 15px, 15px, 15px;
+  width: 50vw;
+  text-align: center;
+}
+.questions {
+  color: #FFFFFF;
+  background: #124168;
+  padding: 2rem;
+  margin: 3rem auto;
+  width: 90vw;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.option {
+  margin-bottom: 0.5rem;
+  background: #E0AAFF;
+  border-radius: 16px;width: 15rem;
+  text-align: center;
+}
+.button {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 600px;
+}
+
+.button button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  
 }
 
 
+
 .img {
-  width: 100px;
+  width: 200px;
+  display: flex;
   height: auto;
 }
 
@@ -25,40 +64,30 @@ body {
 }
 
 
-#result {
-  display: none;
-}
 
-.questions {
-  color: #FFFFFF;
-  background: #124168;
-  padding: 2rem;
-  margin: 3rem auto;
-  width: 90vw;
-  border-radius: 15px;
-}
+
 #question {
   margin: 0.5rem;
 }
 
-#answer {
-  margin-top: 2.5rem;
-  color: black;
+
+.option span:hover {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.option {
-  margin-bottom: 0.5rem;
-  background: #E0AAFF;
-  border-radius: 16px;width: 15rem;
-}
 
-.option hover {
-  color: blue;
-}
+
 
 #scoreboard {
-color: #FFFFFF;
+color: #F4841A;
 text-align: center;
+display: flex;
+margin-top: 15px;
+position: center;
 }
 
 ol {
@@ -67,6 +96,22 @@ ol {
 }
 
 span {
-  display: block;
+  display: flex;
+  align-items:center; 
   padding: 0.1rem 0.7rem;
+  margin: 3px;
+  
+  
 }
+
+@media (max-width: 600px) {
+  .button {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .button button {
+      width: 100%;
+      margin: 5px 0;
+      
+  }}

@@ -101,8 +101,8 @@ let next = document.querySelector('.next');
 let previous = document.querySelector('.previous');
 let points = document.getElementById('score');
 let span = document.querySelectorAll('span');
-/*let startGameButton = document.getElementById('sartGame');*/
-/*let result = document.getElementById('result');*/
+let startGameButton = document.getElementById('startGame');
+let result = document.getElementById('result');
 /*let resultMessage = document.getElementById('result-message');*/
 
     
@@ -188,25 +188,26 @@ const updateResult = () => {
         message = 'Better luck next time. keep practing!';
     }
     result.innerHTML = message;
+    scoreboard.style.display = 'block';
 }
 console.log(updateResult);
 
-/*const startGame = () => {
+const startGame = () => {
     i = 0;
     score = 0;
     showQuestion();
     quizContainer.style.display = 'block';
     points.innerHTML = score + '/' + questionObject.length;
 }
-console.log(startGame);*/
+console.log(startGame);
 
 
 
 /*-------------Event Listener-------------*/
 next.addEventListener('click',nextQuestion)
 previous.addEventListener('click', previousQuestion);
-/*startGameButton.addEventListener('click', startGame);
-option0.addEventListener('click', function() { determinedScore(option0) });
+startGameButton.addEventListener('click', startGame);
+/*option0.addEventListener('click', function() { determinedScore(option0) });
 option1.addEventListener('click', function() { determinedScore(option1) });
 option2.addEventListener('click', function() { determinedScore(option2) });
 option3.addEventListener('click', function() { determinedScore(option3) });*/
