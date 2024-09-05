@@ -5,11 +5,11 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #254252;
+  background: #062540;
 }
 #title {
   font-size: 20px;
-  background-color: #C5630C;
+  background-color: #F4841A;
   border-radius: 50px;
   padding: 15px, 15px, 15px, 15px;
 }
@@ -30,8 +30,8 @@ body {
 }
 
 .questions {
-  color: #FFFCF2;
-  background: #2E1509;
+  color: #FFFFFF;
+  background: #124168;
   padding: 2rem;
   margin: 3rem auto;
   width: 90vw;
@@ -41,12 +41,32 @@ body {
   margin: 0.5rem;
 }
 
+#answer {
+  margin-top: 2.5rem;
+  color: black;
+}
+
 .option {
   margin-bottom: 0.5rem;
-  background: #87979A;
+  background: #E0AAFF;
   border-radius: 16px;width: 15rem;
 }
 
 .option hover {
   color: blue;
+}
+
+#scoreboard {
+color: #FFFFFF;
+text-align: center;
+}
+
+ol {
+  position: relative;
+  padding: 0 1.5rem;
+}
+
+span {
+  display: block;
+  padding: 0.1rem 0.7rem;
 }

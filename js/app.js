@@ -85,7 +85,8 @@ const questionObject = [
 console.log(questionObject);
 
 /*---------- Variables (state) ---------*/
-
+let i = 0;
+let score = 0;
 
 
 /*----- Cached Element References  -----*/
@@ -96,14 +97,17 @@ let option0 = document.getElementById('option0');
 let option1 = document.getElementById('option1');
 let option2 = document.getElementById('option2');
 let option3 = document.getElementById('option3');
-let next = document.querySelectorAll('.next');
+let next = document.querySelector('.next');
+let previous = document.querySelector('.previous');
 let points = document.getElementById('score');
 let span = document.querySelectorAll('span');
-let i = 0;
-let score = 0;
+/*let startGameButton = document.getElementById('sartGame');*/
+/*let result = document.getElementById('result');*/
+/*let resultMessage = document.getElementById('result-message');*/
+
     
 /*-------------- Functions -------------*/
-function showQuestion() {
+const showQuestion = () => {
     for(let a = 0; a<span.length; a++) {
         span[a].style.background = 'none';
     }
@@ -117,7 +121,7 @@ function showQuestion() {
 console.log(showQuestion);
 
 
-function determinedScore(e) {
+const determinedScore = (e) => {
     if(e.innerHTML === questionObject[i].answer && score<questionObject.length)
     {
         score = score + 1;
@@ -132,31 +136,79 @@ setTimeout(nextQuestion, 300);
 console.log(determinedScore);
 
 
-function nextQuestion() {
+const nextQuestion = () => {
     if(i<questionObject.length-1)
 {
     i = i + 1;
-    displayQuestion();
+    showQuestion();
 }
 else {
     points.innerHTML = score + '/' + questionObject.length;
-    quizContainer.style.display = 'block'
+    quizContainer.style.display = 'block';
+    updateResult();
 }
+}
+console.log(nextQuestion);
+
+
+const previousQuestion = () => {
+    if (i > 0) {
+        i = i - 1;
+        showQuestion();
+    }
+};
+console.log(previousQuestion);
+
+
+const backToQuiz = () => {
+    location.reload();
 }
 
-function checkAnswer() {
+const checkAnswer = () => {
     let answerObject = document.getElementById('answerObject');
     let answers = document.getElementById('answers')
     answerObject.style.show = 'block';
     scoreboard.style.show = 'block';
     for(let a = 0; a<questionObject.length; a++)
-    {let list = document.createElement('li');
+    {
+        let list = document.createElement('li');
         list.innerHTML = questionObject[a].answer;
         answers.appendChild(list);
     }
 }
 console.log(checkAnswer);
 
-showQuestion();
+const updateResult = () => {
+    let message = '';
+    if (score === questionObject.length) {
+        message = 'perfect score! you got all the answers right';
+    } else if (score > questionObject.length / 2) {
+        message = 'Great job! you scored more than  half.';
+    } else {
+        message = 'Better luck next time. keep practing!';
+    }
+    result.innerHTML = message;
+}
+console.log(updateResult);
+
+/*const startGame = () => {
+    i = 0;
+    score = 0;
+    showQuestion();
+    quizContainer.style.display = 'block';
+    points.innerHTML = score + '/' + questionObject.length;
+}
+console.log(startGame);*/
+
+
 
 /*-------------Event Listener-------------*/
+next.addEventListener('click',nextQuestion)
+previous.addEventListener('click', previousQuestion);
+/*startGameButton.addEventListener('click', startGame);
+option0.addEventListener('click', function() { determinedScore(option0) });
+option1.addEventListener('click', function() { determinedScore(option1) });
+option2.addEventListener('click', function() { determinedScore(option2) });
+option3.addEventListener('click', function() { determinedScore(option3) });*/
+
+showQuestion();

@@ -19,28 +19,35 @@
         <div class="questions">
         <h2 id="question"></h2>
         <ol type="A">
-            <li class="option"><span id="option0" onclick = "calScore(this)"></span></li>
+            <li class="option"><span id="option0" onclick = "determinedScore(this)"></span></li>
             
-            <li class="option"><span id="option1" onclick = "calsScore(this)"></span></li>
-            <li class="option"><span id="option2" onclick = "calScore(this)"></span></li>
-            <li class="option"><span id="option3" onclick = "calScore(this)"></span></li>
+            <li class="option"><span id="option1" onclick = "determinedScore(this)"></span></li>
+            <li class="option"><span id="option2" onclick = "determinedScore(this)"></span></li>
+            <li class="option"><span id="option3" onclick = "determinedScore(this)"></span></li>
         </ol>
         <h4 id="begin"></h4>
         </div>
     </div>
 
-    <div class="button">
-        <button type="button" class="next" id="next-btn">Next</button>
+    
+    <div  
+    class="button">
+    <button type="button" class="startGame" id="startGame">start-Game</button>
+    <button type="button" class="previous" id="previous">previous</button>
+    <button type="button" class="next" id="next-btn">Next</button>  
     </div>
 
     <div id="scoreboard">
         <img src="" alt="">
         <h2 id="score-title">your score</h2>
         <h2 id="score"></h2>
-        <button type="button" 
-        id="score-btn">Back to quiz</button>
+        
         <button type="button" 
         id="check-answer" onclick="checkAnswer()">check Answers</button>
+
+        <div id="result-message">
+            <h2 id="result"></h2>
+        </div>
     </div>
 
     <div id="answerObject">
@@ -48,9 +55,6 @@
         <ol type="1" id ="answers">
 
         </ol>
-        <button type="button" id="score-btn">Back-to-Quiz</button>
-    </div>
-
 </body>
 </html>
 
