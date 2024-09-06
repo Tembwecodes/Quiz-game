@@ -11,59 +11,49 @@
     <script defer src="./js/app.js"></script>
 </head>
 <body>
-    <img src="//wsl.localhost/Ubuntu/home/tembwes/code/ga/projects/Quiz-game/Vector-Quiz-Transparent-PNG.png" alt="Quiz Game Logo" id="img" class="img">
-    <h1 id="title">FUN GAME</h1>
-
+    <div class="container">
+        <header>
+            <img src="//wsl.localhost/Ubuntu/home/tembwes/code/ga/projects/Quiz-game/Vector-Quiz-Transparent-PNG.png" alt="Quiz Game Logo" id="img" class="img">
+            <h1 id="title">FUN GAME</h1>
+        </header>
+    <section class="instruction">
         <h2 id="Instructions">Game Instructions</h2>
-            <p>The goal of the game is to answer all questions correctly to earn full points at the end of the game and win. The player reads the question and assesses the options of answers given. Then the player picks the correct answer and waits for the next question to load. The game continues until all questions have been asked.
+            <p>The objective of the game is to answer all questions correctly to earn full points at the end of the game. The player reads the question and assesses for the correct options given. The player then picks the correct answer and waits for the next question to load. The game continues until all questions have been answered by the player.
             The player is then shown the score at the end of the game and is declared winner or loser. The game includes a variety of questions with multiple choice open-ended. 
             Categories of the game include
             Sports
             Music</p>
-      
-    <div id="quiz-container">
+    </section> 
+    <section id="quiz-container" class="quiz-container">
         <div class="questions">
         <h2 id="question"></h2>
         <ol type="A">
             <li class="option"><span id="option0" onclick = "determinedScore(this)"></span></li>
-            
             <li class="option"><span id="option1" onclick = "determinedScore(this)"></span></li>
             <li class="option"><span id="option2" onclick = "determinedScore(this)"></span></li>
             <li class="option"><span id="option3" onclick = "determinedScore(this)"></span></li>
         </ol>
         <h4 id="begin"></h4>
         </div>
-    </div>
-
-    
-    <div  
-    class="button">
-    <button type="button" class="restart" id="restart">Restart</button>
+    </section>
+    <section class="controls">
     <button type="button" class="previous" id="previous">Previous</button>
+    <button type="button" class="start" id="start">Start</button>
     <button type="button" class="next" id="next-btn">Next</button>  
-    </div>
-
-    <div id="scoreboard"
+    </section>
+    <section id="scoreboard" class="scoreboard"
         style="display: none;">
-        <img src="" alt="">
-        <h2 id="score-title">your score</h2>
+        <h2 id="score-title">you scored</h2>
         <h2 id="score"></h2>
-        
-        <button type="button" 
-        id="check-answer" onclick="checkAnswer()">check Answers</button>
-
         <div id="result-message">
             <h2 id="result"></h2>
-        </div>
-    </div>
-
-    <div id="answerObject">
-        <h2>Answers :</h2>
-        <ol type="1" id ="answers">
-        </ol>
+        </div>   
+    </section>
+    <audio id="quiz-audio" src="\\wsl.localhost\Ubuntu\home\tembwes\code\ga\projects\Quiz-game\ambient-game-67014.mp3"preload="auto" loop></audio>
     </div>
 </body>
 </html>
+
 
 
 

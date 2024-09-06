@@ -6,67 +6,100 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background: #062540;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 95vh;
+}
+.img {
+  width: 100px;
+  height: auto;
+}
+
 #title {
   font-size: 20px;
   background-color: #F4841A;
   border-radius: 50px;
-  padding: 15px, 15px, 15px, 15px;
+  padding: 25px, 15px, 15px, 15px;
   width: 260px;
   height: 40px;
+  display: flex;
   text-align: center;
+  margin-top: 10px;
 }
+
 .questions {
   color: #FFFFFF;
   background: #124168;
   padding: 2rem;
   margin: 3rem auto;
-  width: 90vw;
+  width: 50vw;
   border-radius: 15px;
   text-align: center;
 }
 
 .option {
   margin-bottom: 0.5rem;
-  background: #E0AAFF;
-  border-radius: 16px;width: 15rem;
-  text-align: center;
+  background: #0C263E;
+  border-radius: 16px;
+  width: 15rem;
+  align-content: center;
 }
-.button {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 600px;
-}/* blue buttons*/
 
-.button button {
+.controls {
+  display: flex;
   padding: 10px 20px;
-  font-size: 1em;
+  gap: 30px;
+  border-radius: 5px; 
+}
+
+.controls button {
+  padding: 10px 20px;
+  font-size: 16px;
   border: none;
+  font-size: 1em;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  
+  transition: background-color 0.3s ease;
+  margin-top: -25px;
 }
 
-.img {
-  width: 200px;
-  display: flex;
-  height: auto;
+.start {
+  background-color: #007bff;
+  color: white;
+}
+
+.previous {
+  background-color: #a7560a;
+  color: white;
+}
+
+.next {
+  background-color: #a7560a; 
+  color: white;
+}
+
+.controls button:hover {
+  background-color: #333; 
+  color: white;
 }
 
 #title {
   color: #F0EFED;
-  
- 
+  text-align: center;
+  justify-content: center;
 }
 
-#Instructions {
+#instruction {
   color: white;
   width: 150px;
+  display: flex;
+  align-items: center;
 }
 p {
   color: white;
@@ -83,10 +116,9 @@ p {
   height: 100px;
 }
 
-/*#question {
-  margin: 0.5rem;
-}*/
-
+.questions li {
+  margin: 10px 0;
+}
 
 .option span:hover {
   background-color: #007bff;
@@ -102,12 +134,13 @@ text-align: center;
 display: flex;
 margin-top: 15px;
 position: center;
+margin-top: -4px;
 }
 
 ol {
   position: relative;
   padding: 0 1.5rem;
-  
+  cursor: pointer;
 }
 
 span {
@@ -115,8 +148,11 @@ span {
   align-items:center; 
   padding: 0.1rem 0.7rem;
   margin: 3px;
-  
-  
+}
+.answerObject {
+
+  color: white;
+
 }
 
 @media (max-width: 600px) {
@@ -124,9 +160,4 @@ span {
       flex-direction: column;
       align-items: center;
   }
-
-  .button button {
-      width: 100%;
-      margin: 5px 0;
-      
-  }}
+}

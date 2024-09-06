@@ -101,12 +101,19 @@ let next = document.querySelector('.next');
 let previous = document.querySelector('.previous');
 let points = document.getElementById('score');
 let span = document.querySelectorAll('span');
-let restartButton = document.getElementById('restart');
+let startButton = document.getElementById('start');
 let result = document.getElementById('result');
-/*let resultMessage = document.getElementById('result-message');*/
-
+const quizAudio = document.getElementById('quiz-audio');
     
 /*-------------- Functions -------------*/
+const playAudio = () => {
+    quizAudio.play();
+};
+
+const pauseAudio = () => {
+    quizAudio.pause();
+}
+
 const showQuestion = () => {
     for(let a = 0; a<span.length; a++) {
         span[a].style.background = 'none';
@@ -160,56 +167,36 @@ const previousQuestion = () => {
 console.log(previousQuestion);
 
 
-const backToQuiz = () => {
-    location.reload();
-}
-
-const checkAnswer = () => {
-    let answerObject = document.getElementById('answerObject');
-    let answers = document.getElementById('answers')
-    answerObject.style.show = 'block';
-    scoreboard.style.show = 'block';
-    for(let a = 0; a<questionObject.length; a++)
-    {
-        let list = document.createElement('li');
-        list.innerHTML = questionObject[a].answer;
-        answers.appendChild(list);
-    }
-}
-console.log(checkAnswer);
-
 const updateResult = () => {
     let message = '';
     if (score === questionObject.length) {
-        message = 'perfect score! you got all the answers right';
+        message = 'congratulation! you win';
     } else if (score > questionObject.length / 2) {
-        message = 'Great job! you scored more than  half.';
+        message = 'Great job! try again.';
     } else {
-        message = 'Better luck next time. keep practing!';
+        message = 'you lose. keep practing!';
     }
     result.innerHTML = message;
     scoreboard.style.display = 'block';
 }
 console.log(updateResult);
 
-const restart = () => {
+const start = () => {
     i = 0;
     score = 0;
     showQuestion();
     quizContainer.style.display = 'block';
     points.innerHTML = score + '/' + questionObject.length;
+    playAudio();
 }
-console.log(restart);
-
-
+console.log(start);
 
 /*-------------Event Listener-------------*/
 next.addEventListener('click',nextQuestion)
 previous.addEventListener('click', previousQuestion);
-restartButton.addEventListener('click', restart);
-/*option0.addEventListener('click', function() { determinedScore(option0) });
-option1.addEventListener('click', function() { determinedScore(option1) });
-option2.addEventListener('click', function() { determinedScore(option2) });
-option3.addEventListener('click', function() { determinedScore(option3) });*/
+startButton.addEventListener('click', () => {
+    start();
+    playAudio();
+});
 
 showQuestion();
