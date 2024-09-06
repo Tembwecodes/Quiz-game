@@ -80,9 +80,7 @@ const questionObject = [
         option: ["The Sea Inside", "8 Mile", "Remember The Titans", "The Pianist"],
         answer: "8 Mile"
     },
-
 ]
-console.log(questionObject);
 
 /*---------- Variables (state) ---------*/
 let i = 0;
@@ -90,6 +88,7 @@ let score = 0;
 
 
 /*----- Cached Element References  -----*/
+
 let question = document.getElementById('question');
 let quizContainer = document.getElementById('quiz-container');
 let scoreCard = document.getElementById('scoreCard');
@@ -125,7 +124,6 @@ const showQuestion = () => {
     option3.innerHTML = questionObject[i].option[3];
     begin.innerHTML = "Question" + (i+1)  + 'of' + questionObject.length;
 }
-console.log(showQuestion);
 
 
 const determinedScore = (e) => {
@@ -140,8 +138,6 @@ const determinedScore = (e) => {
 
 setTimeout(nextQuestion, 300);
 }
-console.log(determinedScore);
-
 
 const nextQuestion = () => {
     if(i<questionObject.length-1)
@@ -155,8 +151,6 @@ else {
     updateResult();
 }
 }
-console.log(nextQuestion);
-
 
 const previousQuestion = () => {
     if (i > 0) {
@@ -164,8 +158,6 @@ const previousQuestion = () => {
         showQuestion();
     }
 };
-console.log(previousQuestion);
-
 
 const updateResult = () => {
     let message = '';
@@ -179,7 +171,6 @@ const updateResult = () => {
     result.innerHTML = message;
     scoreboard.style.display = 'block';
 }
-console.log(updateResult);
 
 const start = () => {
     i = 0;
@@ -189,9 +180,9 @@ const start = () => {
     points.innerHTML = score + '/' + questionObject.length;
     playAudio();
 }
-console.log(start);
 
 /*-------------Event Listener-------------*/
+
 next.addEventListener('click',nextQuestion)
 previous.addEventListener('click', previousQuestion);
 startButton.addEventListener('click', () => {
