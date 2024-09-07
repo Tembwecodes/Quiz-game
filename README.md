@@ -4,8 +4,6 @@
 ![some alt text](https://www.pngmart.com/files/19/Vector-Quiz-Transparent-PNG-418x279.png)
 
 
-
-
 **DESCRIPTION**
 
 ***GAME NAME:*** QUIZ GAME
@@ -14,7 +12,7 @@ The project I chose is a quiz game developed as assignment during the ongoing Bo
 
 **Deployment Link**
 
-You can access the deployed project here: [ ]
+You can access the deployed project here: [https://github.com/Tembwecodes/Quiz-game ]
 
 **TIMEFRAME WORKING ON THE PROJECT**
 
@@ -42,19 +40,28 @@ IN the initial Setup I I didnt have the design layout like a sketch but only wen
 
 **PSUEDOCODE**
 
+/*---------------Quiz Game psuedocode---------------*/
 
+/* the game game should be able to initiaise when the show question function is called*/
 
+/* the user should be able to read the questions and answers when start is button is clicked*/
 
+/* struncture the elements using html, css, and javascript*/
+/*set up the varibles to be accessed later*/
 
+/*after reading the question the user must be able to select one of the optoins as an answer*/
 
+/*the user if unsure of the answer must be able to return to previous question by clickling the previous button*/
 
+/*the game must be able to check if the answer is correct or wrong and update the score*/
 
-**CODE PROCESS**
+/*the game must be able to move to the next question when current question has been answered by the user*/
 
+/*must be able to display the score and win/lose message at the end of the game when all questions have been answered by the user*/
 
+/*must have the button to start the game again*/
 
-
-
+/*must have audio file incoprated and play the adio while the game isbeing played*/
 
 
 
