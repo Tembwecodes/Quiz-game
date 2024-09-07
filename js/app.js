@@ -1,5 +1,19 @@
 console.log('Quiz game!');
 
+/*---------------Quiz Game psuedocode---------------*/
+
+/* the game game should be able to initiaise when the show question function is called*/
+/* the user should be able to read the questions and answers when start is button is clicked*/
+/* struncture the elements using html, css, and javascript*/
+/*set up the varibles to be accessed later*/
+/*after reading the question the user must be able to select one of the optoins as an answer*/
+/*the user if unsure of the answer must be able to return to previous question by clickling the previous button*/
+/*the game must be able to check if the answer is correct or wrong and update the score*/
+/*the game must be able to move to the next question when current question has been answered by the user*/
+/*must be able to display the score and win/lose message at the end of the game when all questions have been answered by the user*/
+/*must have the button to start the game again*/
+/*must have audio file incoprated and play the adio while the game isbeing played*/
+
 /*-------------- Constants -------------*/
 
 const questionObject = [
@@ -83,9 +97,9 @@ const questionObject = [
 ]
 
 /*---------- Variables (state) ---------*/
+
 let i = 0;
 let score = 0;
-
 
 /*----- Cached Element References  -----*/
 
@@ -105,6 +119,7 @@ let result = document.getElementById('result');
 const quizAudio = document.getElementById('quiz-audio');
     
 /*-------------- Functions -------------*/
+
 const playAudio = () => {
     quizAudio.play();
 };
